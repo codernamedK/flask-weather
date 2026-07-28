@@ -6,14 +6,24 @@ import os
 load_dotenv()
 
 def get_current_weather(city="Richmond"):
-    request_url = f"https://api.openweathermap.org/data/2.5/weather?appid={os.getenv('API_KEY')}&q={city}&units=imperial"
+    # standard output will be the Richmond, VA 
+    # openWeatherMap API should be able to parse city and state correctly to match user input
+
+    parts = [part.strip() for part in city.split(',')]
+
+    if len(parts) == 2:
+        query = f"{parts[0]},{parts[1]},US"
+    else:
+        query = parts[0]
+
+    request_url = f"https://api.openweathermap.org/data/2.5/weather?appid={os.getenv('API_KEY')}&q={query}&units=imperial"
 
     weather_data = requests.get(request_url).json()
 
     return weather_data
 
 if __name__ == "__main__":
-    print('\*** Get Current Weather ***\n')
+    print('*** Get Current Weather ***\n')
 
     city = input("\nPlease enter a city name: ")
 

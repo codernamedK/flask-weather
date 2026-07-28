@@ -9,11 +9,11 @@
 </head>
 <body>
     <h1>{{ title }} Weather</h1> 
-    <p>{{ status }} and {{ temp }} &deg;</p>
-    <p>Feels like {{ feels_like }} &deg;</p>
+    <p>{{ status }} and {{ temp }} &deg;F</p>
+    <p>Feels like {{ feels_like }} &deg;F</p>
     
     <form action="/weather">
-        <input type="text" name="city" id="city" placeholder="Enter City Name" />
+        <input type="text" name="city" id="city" placeholder="Enter City, State or just City" />
         <button type ="submit">Submit</button>
     </form>
 </body>

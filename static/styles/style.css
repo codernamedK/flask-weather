@@ -39,3 +39,15 @@ input, button {
     padding: 1rem;
     border-radius: 10px;
 }
+
+input {
+    width: 110%;
+    max-width: 400 px;
+}
+
+button{
+    white-space: nowrap;
+    padding: 1rem 1.5 rem;
+    display: block;
+    margin: 0 auto;
+}
