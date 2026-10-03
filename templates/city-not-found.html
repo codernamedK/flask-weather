@@ -11,8 +11,28 @@
     <h1>City Not Found</h1>
     <h2>Try Again?</h2> 
     <form action="/weather">
-        <input type="text" name="city" id="city" placeholder="Enter City Name or City, State" />
-        <button type ="submit">Submit</button>
-    </form>
+    <input type="text" name="city" id="city" placeholder="Enter City, State (e.g. Richmond, VA)" />
+    <button type="submit" class="blob-btn">
+        Submit
+        <span class="blob-btn__inner">
+            <span class="blob-btn__blobs">
+                <span class="blob-btn__blob"></span>
+                <span class="blob-btn__blob"></span>
+                <span class="blob-btn__blob"></span>
+                <span class="blob-btn__blob"></span>
+            </span>
+        </span>
+    </button>
+</form>
+
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" style="display:none">
+    <defs>
+        <filter id="goo">
+            <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="10"></feGaussianBlur>
+            <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 21 -7" result="goo"></feColorMatrix>
+            <feBlend in2="goo" in="SourceGraphic" result="mix"></feBlend>
+        </filter>
+    </defs>
+</svg>
 </body>
 </html>
